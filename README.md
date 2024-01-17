@@ -8,4 +8,4 @@ At start you will see different options like:
 - LinkedList
 - Binary Tree
 
-You have to choose a topic which you want to learn.
+You have to choose a topic which you want to learn and practice.
