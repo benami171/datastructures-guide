@@ -326,6 +326,10 @@ struct NodeSl* insertAtBeginningSingly(struct NodeSl* Shead) {
     scanf("%d", &value);
 
     struct NodeSl* newNodeSl = (struct NodeSl*)malloc(sizeof(struct NodeSl));
+    if(newNodeSl == NULL) {
+        printf("Memory allocation failed. Insertion failed.\n");
+        exit(EXIT_FAILURE);
+    }
     newNodeSl->data = value;
     newNodeSl->next = Shead;
     displaySinglyLinkedListfun(Shead);
@@ -340,6 +344,10 @@ struct NodeSl* insertAtEndSingly(struct NodeSl* Shead) {
     scanf("%d", &value);
 
     struct NodeSl* newNodeSl = (struct NodeSl*)malloc(sizeof(struct NodeSl));
+    if(newNodeSl == NULL) {
+        printf("Memory allocation failed. Insertion failed.\n");
+        exit(EXIT_FAILURE);
+    }
     newNodeSl->data = value;
     newNodeSl->next = NULL;
 
@@ -589,6 +597,10 @@ void reverse_displayDoublyfun(struct Noded* headd) {
 
 void insertionAtBeginningDoubly() {
     newNoded = (struct Noded*)malloc(sizeof(struct Noded));
+    if (newNoded == NULL) {
+        printf("\nNo memory allocated\n");
+        exit(EXIT_FAILURE);
+    }
     printf("\nEnter the data you want to insert: ");
     scanf("%d", &newNoded->data);
     newNoded->nextd = NULL;
@@ -619,6 +631,10 @@ void insertionAtMiddleDoubly() {
             i++;
         }
         newNoded = (struct Noded*)malloc(sizeof(struct Noded));
+        if (newNoded == NULL) {
+            printf("\nNo memory allocated\n");
+            exit(EXIT_FAILURE);
+        }
         printf("\nEnter the data you want to insert: ");
         scanf("%d", &newNoded->data);
         newNoded->nextd = tempd->nextd;
@@ -638,6 +654,10 @@ void insertionAtEndDoubly() {
             tempd = tempd->nextd;
         }
         newNoded = (struct Noded*)malloc(sizeof(struct Noded));
+        if (newNoded == NULL) {
+            printf("\nNo memory allocated\n");
+            exit(EXIT_FAILURE);
+        }
         printf("\nEnter the data you want to insert: ");
         scanf("%d", &newNoded->data);
         newNoded->nextd = NULL;
@@ -709,6 +729,10 @@ void createDoublyLinkedList() {
     
     for (int i = 1; i <= num; i++) {
         newNoded = (struct Noded*)malloc(sizeof(struct Noded));
+        if (newNoded == NULL) {
+            printf("\nNo memory allocated\n");
+            exit(EXIT_FAILURE);
+        }
         printf("Enter %d element data: ", i);
         scanf("%d", &newNoded->data);
         newNoded->nextd = NULL;
@@ -911,6 +935,11 @@ void insertionAtBeginningCircular()
     else
     {
         newNode = (struct node *)malloc(sizeof(struct node));
+        if (newNode == NULL)
+        {
+            printf("\nNo memory allocated\n");
+            exit(EXIT_FAILURE);
+        }
         printf("\nEnter the data you want to insert :");
         scanf("%d", &newNode->datac);
         newNode->nextc = headc;
@@ -937,6 +966,11 @@ void insertionAtMiddleCircular()
             i++;
         }
         newNode = (struct node *)malloc(sizeof(struct node));
+        if (newNode == NULL)
+        {
+            printf("\nNo memory allocated\n");
+            exit(EXIT_FAILURE);
+        }
         printf("\nEnter the data you want to insert :");
         scanf("%d", &newNode->datac);
         newNode->nextc = tempc->nextc;
@@ -954,6 +988,11 @@ void insertionAtEndCircular()
     else
     {
         newNode = (struct node *)malloc(sizeof(struct node));
+        if (newNode == NULL)
+        {
+            printf("\nNo memory allocated\n");
+            exit(EXIT_FAILURE);
+        }
         printf("\nEnter the data you want to insert :");
         scanf("%d", &newNode->datac);
         tailc->nextc = newNode;
@@ -1023,6 +1062,11 @@ int seeCircularLinkedListFunctioning()
     for (int i = 1; i <= num; i++)
     {
         newNode = (struct node *)malloc(sizeof(struct node));
+        if(newNode == NULL)
+        {
+            printf("\nNo memory allocated\n");
+            exit(EXIT_FAILURE);
+        }
         printf("\nEnter element %d data : ", i);
         scanf("%d", &newNode->datac);
         if (headc == NULL)
@@ -2000,6 +2044,10 @@ int displayCircularQueue() {
 // `````````````````````````````````````````````````````````````Binary tree`````````````````````````````````````````````````````````````````
 struct Nodeb* createNodeb(int key) {
     struct Nodeb* newNodeb = (struct Nodeb*)malloc(sizeof(struct Nodeb));
+    if(newNodeb == NULL) {
+        printf("Memory not allocated\n");
+        exit(EXIT_FAILURE);
+    }
     newNodeb->key = key;
     newNodeb->left = newNodeb->right = NULL;
     return newNodeb;
@@ -2206,6 +2254,10 @@ int displayBinaryTree()
 
 struct Nodebst* newNodebst(int item, int level) {
     struct Nodebst* temp = (struct Nodebst*)malloc(sizeof(struct Nodebst));
+    if (temp == NULL) {
+        printf("Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
     temp->keyb = item;
     temp->level = level;
     temp->leftb = temp->rightb = NULL;
